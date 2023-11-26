@@ -1,0 +1,16 @@
+<div>
+    <input
+        class="form-control w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+        [type]="type" 
+        [placeholder]="placeholder"
+        (change)="handleOnChange($event)" 
+        (focus)="onTouched()"
+        [value]="value"
+    />
+        <span class="text-xs pl-2 text-red-500" *ngIf="errors?.['required']">
+            {{errorMessages.required}}
+        </span>
+        <span class="text-xs pl-2 text-red-500" *ngIf="errors?.['minlength']">
+            {{errorMessages.minLength(6)}}
+        </span>
+</div>
