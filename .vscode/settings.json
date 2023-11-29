@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "eslint.enable": true,
+}

@@ -5,12 +5,12 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet , HeaderComponent, FooterComponent],
-  
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    standalone: true,
+    imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
+
+    templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'shopping-cart';
+    title = 'shopping-cart';
 }
