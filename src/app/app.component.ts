@@ -7,7 +7,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet , HeaderComponent,FooterComponent],
+  imports: [CommonModule, RouterOutlet , HeaderComponent, FooterComponent],
+  
   templateUrl: './app.component.html',
 })
 export class AppComponent {
