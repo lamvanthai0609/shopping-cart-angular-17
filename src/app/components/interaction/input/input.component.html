@@ -5,8 +5,7 @@
         [placeholder]="placeholder"
         (change)="handleOnChange($event)"
         (focus)="onTouched()"
-        [value]="value"
-    />
+        [value]="value" />
     <span class="text-xs pl-2 text-red-500" *ngIf="errors?.['required']">
         {{ errorMessages.required }}
     </span>

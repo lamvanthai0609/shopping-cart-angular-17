@@ -30,6 +30,7 @@ export class LoginComponent {
         private router: Router,
         private formBuilder: FormBuilder
     ) {}
+
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             username: this.formBuilder.control('', [Validators.required]),
