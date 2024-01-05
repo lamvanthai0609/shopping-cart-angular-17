@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import {
     FormBuilder,
     FormControl,
@@ -9,8 +8,10 @@ import {
     ReactiveFormsModule,
     Validators,
 } from '@angular/forms';
-import { ErrorMessages } from '@/util/validation';
+import { Router } from '@angular/router';
+
 import { InputComponent } from '@/components/interaction';
+import { ErrorMessages } from '@/util/validation';
 
 interface IUserInfo {
     username: FormControl<string | null>;

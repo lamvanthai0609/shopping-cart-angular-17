@@ -1,5 +1,5 @@
-import { Component, Input, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input, forwardRef } from '@angular/core';
 import {
     ControlValueAccessor,
     FormControl,
@@ -11,6 +11,7 @@ import {
     ValidationErrors,
     Validator,
 } from '@angular/forms';
+
 import { ErrorMessages } from '@/util/validation';
 
 @Component({

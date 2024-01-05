@@ -75,19 +75,13 @@
                 "import/order": [
                     "error",
                     {
-                        "newlines-between": "always",
-                        "groups": [
-                            "internal",
-                            "unknown",
-                            "external",
-                            "builtin",
-                            [
-                                "parent",
-                                "sibling",
-                                "index"
-                            ]
-                        ],
+                        "groups": [["external", "builtin"], "internal", ["sibling", "parent"], "index"],
                         "pathGroups": [
+                            {
+                                "pattern": "@angular/**",
+                                "group": "external",
+                                "position": "before"
+                            },
                             {
                                 "pattern": "rxjs",
                                 "group": "unknown"
@@ -99,12 +93,18 @@
                             {
                                 "pattern": "@internal-library",
                                 "group": "builtin"
+                            },
+                            {
+                                "pattern": "@/**",
+                                "group": "internal"
                             }
                         ],
-                        "pathGroupsExcludedImportTypes": [
-                            "type",
-                            "object"
-                        ]
+                        "newlines-between": "always",
+                        "alphabetize": {
+                            "order": "asc",
+                            "caseInsensitive": true
+                        }
+                        
                     }
                 ]
             }
