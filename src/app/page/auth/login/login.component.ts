@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
     FormBuilder,
     FormControl,
@@ -24,7 +24,7 @@ interface IUserInfo {
     imports: [CommonModule, FormsModule, ReactiveFormsModule, InputComponent],
     templateUrl: './login.component.html',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
     loginForm!: FormGroup<IUserInfo>;
     errorMessages = ErrorMessages;
     constructor(

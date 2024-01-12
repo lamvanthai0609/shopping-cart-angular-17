@@ -45,7 +45,11 @@
                         novalidate
                         class="mx-auto max-w-xs mt-2"
                         [formGroup]="loginForm">
-                        <app-input formControlName="username" placeholder="Username"> </app-input>
+                        <app-input
+                            [formGroup]="loginForm"
+                            formControlName="username"
+                            placeholder="Username">
+                        </app-input>
                         <input
                             formControlName="password"
                             class="form-control w-full px-4 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"

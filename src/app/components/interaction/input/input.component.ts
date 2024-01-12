@@ -1,16 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, forwardRef } from '@angular/core';
-import {
-    ControlValueAccessor,
-    FormControl,
-    FormGroup,
-    FormsModule,
-    NG_VALIDATORS,
-    NG_VALUE_ACCESSOR,
-    ReactiveFormsModule,
-    ValidationErrors,
-    Validator,
-} from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ErrorMessages } from '@/util/validation';
 
@@ -18,49 +8,13 @@ import { ErrorMessages } from '@/util/validation';
     selector: 'app-input',
     standalone: true,
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => InputComponent),
-            multi: true,
-        },
-        {
-            provide: NG_VALIDATORS,
-            useExisting: forwardRef(() => InputComponent),
-            multi: true,
-        },
-    ],
     templateUrl: './input.component.html',
 })
-export class InputComponent implements ControlValueAccessor, Validator {
+export class InputComponent {
     @Input() formControlName!: string;
+    @Input() formGroup!: FormGroup;
     @Input() type: string = 'text';
     @Input() placeholder: string = '';
-    @Input() error: string = '';
-    form!: FormGroup;
-    value: string = '';
+    @Input() errors: Record<string, boolean> | null = null;
     errorMessages = ErrorMessages;
-    onChange!: (value: unknown) => void;
-    onTouched!: () => void;
-    errors!: ValidationErrors | null;
-
-    writeValue(value: string) {
-        if (value !== undefined) {
-            this.value = value;
-        }
-    }
-    registerOnChange(fn: (value: unknown) => void) {
-        this.onChange = fn;
-    }
-    registerOnTouched(fn: () => void) {
-        this.onTouched = fn;
-    }
-    validate(c: FormControl) {
-        this.errors = c.errors;
-        return c.errors;
-    }
-    handleOnChange(e: any) {
-        this.writeValue(e.target.value);
-        this.onChange(e.target.value);
-    }
 }
