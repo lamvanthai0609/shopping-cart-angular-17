@@ -1,3 +1,21 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --fontFamily : "Plus Jakarta Sans";
+    --primary-color : #131619;
+    --secondaryColor : #0D0F10;
+    --textColor:#E8E9E9;
+    --gradient-item-color-1: rgba(215, 237, 237, 0.16);
+    --gradient-item-color-2 : rgba(204, 235, 235, 0.00);
+    --green :#B6F09C;
+    --red: #D0302F;
+    --orange: #E26F20;
+    --cyan: #82DBF7;
+    --gray:#686B6E;
+    --black:#000000;
+    --white:#FFFFFF;
+}
+

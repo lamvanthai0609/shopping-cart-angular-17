@@ -7,6 +7,8 @@ import { HomeComponent } from '@/page/home/home.component';
 import { Page404Component } from '@/page/maintenance/404/404.component';
 import { ProductComponent } from '@/page/product/product.component';
 
+import { ChatComponent } from './page/chat/chat.component';
+
 export const routes: Routes = [
     {
         path: '',
@@ -32,6 +34,10 @@ export const routes: Routes = [
     {
         path: 'cart',
         component: CartComponent,
+    },
+    {
+        path: 'chat',
+        component: ChatComponent,
     },
     {
         path: '**',

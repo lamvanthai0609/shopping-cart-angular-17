@@ -13,7 +13,7 @@ import { HeaderComponent } from './header/header.component';
 })
 export class LayoutComponent implements OnInit {
     isShowLayout: boolean = true;
-    blackListOfShowLayout: string[] = ['/auth/register', '/auth/login'];
+    blackListOfShowLayout: string[] = ['/auth/register', '/auth/login', '/chat'];
     constructor(private router: Router) {}
     ngOnInit() {
         this.router.events.subscribe(event => {

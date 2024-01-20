@@ -4,7 +4,8 @@
         {
             "files": [
                 "*.ts",
-                "*.json"
+                "*.json",
+                "*.js"
             ],
             "parser": "@typescript-eslint/parser",
             "parserOptions": {
