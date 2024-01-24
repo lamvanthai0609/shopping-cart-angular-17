@@ -7,7 +7,8 @@ module.exports = {
 
     theme: {
         extend: {
-            colors: {
+            colors: ({ colors }) => ({
+                ...colors,
                 primary: 'var(--primary-color)',
                 secondary: 'var(--secondaryColor)',
                 textColor: 'var(--textColor)',
@@ -20,10 +21,12 @@ module.exports = {
                 gray: 'var(--gray)',
                 transparent: 'transparent',
                 current: 'currentColor',
-            },
+            }),
             backgroundColor: {
                 'gradient-item':
-                    'linear-gradient(118deg, var(--gradient-item-color-1) -47.79%, var(--gradient-item-color-2) 100%)',
+                    'linear-gradient(rgba(255, 255, 255, 0.08), 118deg, var(--gradient-item-color-1) -47.79%, var(--gradient-item-color-2) 100%)',
+                'test-bg':
+                    'linear-gradient(118deg, rgba(215, 237, 237, 0.16) -47.79%, rgba(204, 235, 235, 0.00) 100%)',
             },
         },
     },
