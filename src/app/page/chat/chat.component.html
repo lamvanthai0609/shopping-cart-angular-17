@@ -44,10 +44,10 @@
         {{ data | chat }}
     </div>
     <div class="h-full bg-second*ary flex-1 rounded-2xl text-white">
-        <div class="flex flex-col">
-            <div *ngFor="let groupService of groupServices; index as i">
-                <app-group-service-card [groupServices]="groupService"></app-group-service-card>
-            </div>
+        <div class="flex flex-col gap-2">
+            <app-group-service-card
+                *ngFor="let groupService of groupServices"
+                [groupServices]="groupService"></app-group-service-card>
         </div>
     </div>
 </div>

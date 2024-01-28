@@ -17,12 +17,13 @@ import { TestApiService } from '@/service/test-api.service';
 export class ChatComponent {
     data: string = '';
     groupServices: IData[][] = [];
+    chunkSize: number = 3;
 
     constructor(private testAPI: TestApiService) {
         this.testAPI.getUsers().subscribe(res => {
             this.data = JSON.stringify(res);
         });
-        this.groupServices = splitArrayIntoChunks<IData>(data.data as IData[], 3);
+        this.groupServices = splitArrayIntoChunks<IData>(data.data as IData[], this.chunkSize);
         console.log('groupServices', this.groupServices);
     }
 }
