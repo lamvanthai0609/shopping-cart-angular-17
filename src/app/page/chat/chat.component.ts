@@ -1,26 +1,28 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+import { splitArrayIntoChunks } from '@/common';
+import { GroupServiceCardComponent } from '@/components/group-service-card';
 import { SvgComponent } from '@/components/svg/svg.component';
+import { IData, data } from '@/dummy';
 import { ChatPipe } from '@/pipe/chat.pipe';
 import { TestApiService } from '@/service/test-api.service';
 
 @Component({
     selector: 'app-chat',
     standalone: true,
-    imports: [CommonModule, SvgComponent, ChatPipe],
+    imports: [CommonModule, SvgComponent, ChatPipe, GroupServiceCardComponent],
     templateUrl: './chat.component.html',
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent {
     data: string = '';
+    groupServices: IData[][] = [];
+
     constructor(private testAPI: TestApiService) {
         this.testAPI.getUsers().subscribe(res => {
             this.data = JSON.stringify(res);
         });
-        console.log(this.data);
-    }
-
-    ngOnInit(): void {
-        console.log('ChatComponent');
+        this.groupServices = splitArrayIntoChunks<IData>(data.data as IData[], 3);
+        console.log('groupServices', this.groupServices);
     }
 }
