@@ -22,11 +22,12 @@ module.exports = {
                 transparent: 'transparent',
                 current: 'currentColor',
             }),
-            backgroundColor: {
+            backgroundImage: {
                 'gradient-item':
-                    'linear-gradient(rgba(255, 255, 255, 0.08), 118deg, var(--gradient-item-color-1) -47.79%, var(--gradient-item-color-2) 100%)',
-                'test-bg':
-                    'linear-gradient(118deg, rgba(215, 237, 237, 0.16) -47.79%, rgba(204, 235, 235, 0.00) 100%)',
+                    'linear-gradient(162deg, #1a2023 22.02%, rgba(13, 15, 16, 0.00) 81.41%)',
+            },
+            boxShadow: {
+                'item-shadow': '0px 4px 4px 0px var(--black-250)',
             },
         },
     },

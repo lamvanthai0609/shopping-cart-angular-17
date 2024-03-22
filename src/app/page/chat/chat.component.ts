@@ -1,24 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { SvgComponent } from '@/components/svg/svg.component';
+import { UserCardComponent } from '@/components/user-card/user-card.component';
 import { ChatPipe } from '@/pipe/chat.pipe';
-import { TestApiService } from '@/service/test-api.service';
 
 @Component({
     selector: 'app-chat',
     standalone: true,
-    imports: [CommonModule, SvgComponent, ChatPipe],
+    imports: [CommonModule, SvgComponent, ChatPipe, UserCardComponent, TranslateModule],
     templateUrl: './chat.component.html',
 })
 export class ChatComponent implements OnInit {
     data: string = '';
-    constructor(private testAPI: TestApiService) {
-        this.testAPI.getUsers().subscribe(res => {
-            this.data = JSON.stringify(res);
-        });
-        console.log(this.data);
-    }
+    constructor() {}
 
     ngOnInit(): void {
         console.log('ChatComponent');
